@@ -2,6 +2,7 @@
 Please read the disclaimer and licensing information before use.
 
 This is a Swift-based iOS app that sends arrival alerts using geofencing, so students do not forget to pay for parking. It runs entirely on the device. No servers. No analytics. Location is only used to trigger local notifications.  
+Compared to Shortcuts on iPhone and other reminder apps, this one does not trigger false-positive alerts and will update the monitored region itself so that you don't have to manually adjust the lot being monitored.
 It ships with UC Davis as the example campus. You can adjust it to make it suitable for any other campus by changing a few constants. 
 
 ## Goal & Flow
