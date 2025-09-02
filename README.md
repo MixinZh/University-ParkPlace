@@ -1,7 +1,7 @@
 # University-ParkPlace
 Please read the disclaimer and licensing information before use.
 
-- What this code does, how it works, and how to make it yours  
+What this code does, how it works, and how to make it yours  
 This is a Swift-based iOS app that sends arrival alerts using geofencing, so students do not forget to pay for parking. It runs entirely on the device. No servers. No analytics. Location is only used to trigger local notifications.  
 It ships with UC Davis as the example campus. You can adjust it to make it suitable for any other campus by changing a few constants. 
 
