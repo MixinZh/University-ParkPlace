@@ -1,0 +1,23 @@
+/*
+DISCLAIMERS
+- Provided “AS IS” without any warranty. Use at your own risk. Not legal advice.
+- Authors are not liable for tickets, fines, missed alerts, data loss, or any damages.
+- This app does not determine legal compliance or payment status; it’s only a reminder.
+- This app does not process payments. It only opens your chosen payment app/site.
+- Location and geofence accuracy are limited (GPS drift, buildings, device state). Geofences are approximate.
+- Alerts can be delayed or dropped by iOS (battery saver, Focus modes, system policy, device accuracy).
+- Background behavior is best-effort and may change with iOS updates; reliability can vary by device and version.
+- Background behavior requires user “Always” Location and Notifications, and Background App Refresh.
+- Parking rules differ by campus and change over time. You must verify and follow your campus rules/signage.
+- Do not interact with the app while driving.
+- No analytics and no server calls in this repo. Location data stays on the device.
+- Do not log or commit private coordinates or PII. Keep any exclusion lists in a local, untracked file.
+- Third-party names are for identification only; you are subject to their terms when you use their apps/sites.
+- “UC Davis,” “AIMS Mobile Pay,” and “Apple” belong to their owners; not affiliated with or endorsed by them.
+- If you ship a build (TestFlight/App Store), you are responsible for meeting Apple’s policies and local laws.
+- Community support only. No SLA. Open an issue for bugs or security concerns.
+- Tested on a limited set of devices; behavior may vary by iOS version and hardware.
+- Accessibility is a work in progress; contributions welcome.
+- For security issues, email or open a private issue; avoid posting exploits publicly.
+- See LICENSE for terms. By contributing, you agree your contributions are licensed under the project’s license.
+*/
