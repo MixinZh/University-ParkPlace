@@ -1,5 +1,7 @@
 # University-ParkPlace
 Please read the disclaimer and licensing information before use.
+License: Non-Commercial (UPP-NC-1.0). 
+Commercial use requires a separate license – contact: <mixinzh@outlook.com>.
 
 This is a Swift-based iOS app that sends arrival alerts using geofencing, so students do not forget to pay for parking. It runs entirely on the device. No servers. No analytics. Location is only used to trigger local notifications.  
 Compared to Shortcuts on iPhone and other reminder apps, this one does not trigger false-positive alerts and will update the monitored region itself so that you don't have to manually adjust the lot being monitored.
