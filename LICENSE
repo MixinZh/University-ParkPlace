@@ -1,21 +1,71 @@
-MIT License
+University ParkPlace Non-Commercial License (UPP-NC-1.0)
 
-Copyright (c) 2025 Mixin
+Copyright (c) 2025 Mixin Zhao
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Definitions
+   “Software” means the University ParkPlace code and any associated files
+   distributed with this license.
+   “Non-Commercial” means any use that is not intended for or directed toward
+   commercial advantage or financial compensation (e.g., selling, licensing
+   for a fee, paid consulting deliverables, ad-supported distribution, or use
+   to provide a paid service).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. Grant
+   Subject to the terms below, you are granted a non-exclusive,
+   non-transferable license to use, reproduce, modify, and distribute the
+   Software and your modifications (“Improvements”) **solely for
+   Non-Commercial purposes**.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. Conditions
+   a) Attribution. You must retain:
+      - This license text.
+      - The copyright notice: “© 2025 Mixin Zhao”.
+      - Notices for any third-party components and their licenses.
+      In README or app “About,” include: “University ParkPlace by Mixin Zhao.”
+
+   b) Same-License Distribution. If you distribute the Software or
+      Improvements, you must do so under this same license. You may not impose
+      additional terms that loosen the Non-Commercial restriction.
+
+   c) No Trademark Rights. This license does not grant any rights to use the
+      names, logos, or trademarks of Mixin Zhao or any third party.
+
+   d) Third-Party Code. Some files may include or depend on third-party
+      software with their own terms. You must follow those terms as well.
+
+   e) Citation (optional but requested). If you publish results that used the
+      Software, acknowledge it with an appropriate citation.
+
+4. Prohibited Uses (examples, not a complete list)
+   - Selling or licensing the Software or Improvements for a fee.
+   - Using the Software to deliver a paid product or service for others.
+   - Distributing builds that are ad-supported or that collect data for
+     marketing or sales purposes.
+   - Internal use inside a for-profit organization where the Software supports
+     revenue-generating activity.
+
+5. Commercial Licensing
+   For commercial permissions, contact: <add your email or URL here>.
+
+6. Warranty and Liability
+   THE SOFTWARE IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+   THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE,
+   ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+   OTHER DEALINGS IN THE SOFTWARE.
+
+7. Indemnity
+   You agree to defend, indemnify, and hold harmless the copyright holder from
+   any claims arising from your use or distribution of the Software or
+   Improvements.
+
+8. Termination
+   This license terminates automatically if you breach any term. Upon
+   termination you must stop using and distributing the Software and any
+   Improvements. Rights for prior compliant distributions remain in effect.
+
+9. Governing Law
+   This license is governed by the laws of the State of California, excluding
+   its conflict-of-laws rules. Venue and jurisdiction lie in California courts.
