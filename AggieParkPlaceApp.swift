@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: LicenseRef-UPP-NC-1.0
+// Copyright (c) 2025 Mixin Zhao
 
 // Uses coordinate exclusions to reduce false positives.
 // Geofences are approximate; accuracy varies by device/iOS.
