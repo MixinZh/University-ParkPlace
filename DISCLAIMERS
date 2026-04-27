@@ -1,5 +1,5 @@
 /*
-License-Identifier: MIT
+License-Identifier: LicenseRef-UPP-NC-1.0
 DISCLAIMERS
 - Provided “AS IS” without any warranty. Use at your own risk. Not legal advice.
 - Authors are not liable for tickets, fines, missed alerts, data loss, or any damages.
@@ -11,7 +11,9 @@ DISCLAIMERS
 - Background behavior requires user “Always” Location and Notifications, and Background App Refresh.
 - Parking rules differ by campus and change over time. You must verify and follow your campus rules/signage.
 - Do not interact with the app while driving.
-- No analytics and no server calls in this repo. Location data stays on the device.
+- No analytics are included. The core parking reminder flow stays on device.
+- Optional enforcement reporting uses Firebase Firestore if configured. Reports may include a location, timestamp, and anonymous device reporter ID.
+- Do not enable shared enforcement reporting unless your Firestore rules, privacy disclosures, and data retention choices are appropriate for your users.
 - Do not log or commit private coordinates or PII. Keep any exclusion lists in a local, untracked file.
 - Third-party names are for identification only; you are subject to their terms when you use their apps/sites.
 - “UC Davis,” “AIMS Mobile Pay,” and “Apple” belong to their owners; not affiliated with or endorsed by them.

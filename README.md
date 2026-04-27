@@ -3,16 +3,19 @@ Please read the disclaimer and licensing information before use.
 License: Non-Commercial (UPP-NC-1.0). 
 Commercial use requires a separate license – contact: <mixinzh@outlook.com>.
 
-This is a Swift-based iOS app that sends arrival alerts using geofencing, so students do not forget to pay for parking. It runs entirely on the device. No servers. No analytics. Location is only used to trigger local notifications.  
+This is a Swift-based iOS app that sends arrival alerts using geofencing, so students do not forget to pay for parking. The core parking reminder flow runs on device. Optional enforcement reporting uses Firebase Firestore only when Firebase packages and `GoogleService-Info.plist` are added; otherwise that feature is disabled. No analytics are included.
 Compared to Shortcuts on iPhone and other reminder apps, this one does not trigger false-positive alerts and will update the monitored region itself so that you don't have to manually adjust the lot being monitored.
 It ships with UC Davis as the example campus. You can adjust it to make it suitable for any other campus by changing a few constants. 
+
+Latest update: improved app lifecycle handling, background geofence recovery, notification action handling, and optional Firebase-backed enforcement reporting.
 
 ## Goal & Flow
 The goal of this app is to remind users to pay when users arrive in a campus lot, then it will fire a follow-up reminder if users ignore the first one. This app uses a two-layer geofence system where it sets a large campus “sentinel” region to wake the app when users get near campus, and it will monitor up to 19 small lot regions that will actually trigger the pay flow.
 
 This app will fire the first alert when users enter a lot. The first alert allows the user to choose from getting a follow-up notification in 30 minutes or Paid (no later notification). After the second notification has been fired, if users ignore it, a final reminder will be sent 30 minutes later. There is only one chain per day, assuming that all users use a day pass that allows parking in all lots.
 
-Everything is local. If users tap the alert, the app hands users off to the AIMS Mobile Pay website; if users' campus uses another provider, change accordingly.
+The parking reminder flow is local. If users tap the alert, the app hands users off to the AIMS Mobile Pay website; if users' campus uses another provider, change accordingly.
+Optional enforcement reporting lets users report nearby parking enforcement. Reports are stored in Firestore with a location, timestamp, and anonymous device reporter ID, then filtered to recent reports near the campus center before showing an in-app warning or local notification.
 
 ## Files and main pieces
 - AppCoordinator: wires up the shared GeoManager instance.  
@@ -25,6 +28,9 @@ Everything is local. If users tap the alert, the app hands users off to the AIMS
 **Notifications and flow control:**  
 - GeofenceEventRouter: decides when an alert chain can start, schedules follow-ups, enforces a daily cap and a small global throttle.  
 - NotificationHandler: registers categories, posts notifications, responds to button taps and banner taps.
+
+**Optional enforcement reporting:**
+- TicketManager: sends and listens for recent enforcement reports through Firestore when Firebase is configured. It filters reports to a campus-radius window, ignores the current user's own reports for alerts, and throttles local warning notifications.
 
 ## Constants you will change for another campus
 - campusCenter: latitude and longitude of your campus center.  
@@ -46,7 +52,7 @@ If during that window users' location fix shows users are already inside a lot r
 
 ## The alert chain
 We use GeofenceEventRouter as a gatekeeper, so it stores minimal state in UserDefaults.  
-After T0 is fired, we provide two options, Paid (ends the chain for today) and Remind me later (schedules a 30-minute reminder). After 30 minutes, the “Mark as paid or get one more reminder” notification will be fired. If the user snoozes here, it schedules the final 60-minute reminder. Any “Paid” action or tapping the banner to open AIMS Mobile Pay ends the flow and cancels pending follow-ups.  
+After T0 is fired, we provide two options, Paid (ends the chain for today) and Remind me later (schedules a 30-minute reminder). After 30 minutes, the “Mark as paid or get one more reminder” notification will be fired. If the user snoozes here, it schedules the final 60-minute reminder. Any “Paid” action ends the flow and cancels pending follow-ups. Tapping the banner opens AIMS Mobile Pay but keeps follow-up reminders scheduled because the user may not have paid yet.
 In the app, `payFlowActive` flips the payment controls panel from “Locked” to “Ready.” Users can also mark “I paid” in the app, which ends the chain.  
 There is one chain per day. If users leave and re-enter multiple lots, it will not spam users.
 
@@ -61,6 +67,13 @@ Choose something modern (iOS 15 or later is typical). The code uses SwiftUI and 
 **Info.plist:**  
 - `NSLocationWhenInUseUsageDescription`  
 - `NSLocationAlwaysAndWhenInUseUsageDescription`
+
+**Optional Firebase enforcement reporting:**
+- Add Firebase packages: `FirebaseCore`, `FirebaseFirestore`, and `FirebaseFirestoreSwift`.
+- Add `GoogleService-Info.plist` to the app target.
+- Configure Firestore rules for the `ticket_reports` collection before shipping a shared build.
+
+If Firebase is not present or `GoogleService-Info.plist` is missing, the app still builds and the parking reminder flow still works. Enforcement reporting is skipped.
 
 ## Exclusions and false positives
 One exclusion is baked in the example to avoid a Trader Joe’s lot that is not part of UC Davis parking:  
