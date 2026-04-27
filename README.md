@@ -63,6 +63,17 @@ On first launch, the app asks for When In Use location. After users start using 
 If the system launches the app because of a location event, AppDelegate wires the CLLocationManager to the shared GeoManager, re-arms the sentinel, and queries its state.
 
 ## Required setup to build and run
+Open `AggieParkPlace.xcodeproj` in Xcode.
+
+To run on your iPhone:
+- Connect the iPhone to your Mac and trust the computer on the phone.
+- In Xcode, open the `AggieParkPlace` target, then go to `Signing & Capabilities`.
+- Select your Apple ID team and keep `Automatically manage signing` enabled.
+- If Xcode asks, change the bundle identifier to something unique under your account.
+- Select your iPhone as the run destination and press `Cmd + R`.
+- If prompted, enable Developer Mode on the iPhone in `Settings > Privacy & Security > Developer Mode`, restart the phone, then run again.
+- On first launch, allow notifications and location. For real background parking reminders, grant `Always` location access with precise location enabled.
+
 Choose something modern (iOS 15 or later is typical). The code uses SwiftUI and modern Core Location.  
 **Info.plist:**  
 - `NSLocationWhenInUseUsageDescription`  
